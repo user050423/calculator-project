@@ -60,4 +60,13 @@ console.log(operate(10, 'add', 5));
 Don’t worry about making them functional just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
 Add a “clear” button.*/
-const buttons = ['AC', 'DEL', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '.', '0', '=']
+const buttons = ['AC', 'DEL', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '.', '0', '='];
+
+const displayButtons = document.querySelector('.buttons');
+
+for (let i = 0; i < buttons.length; i++) {
+    const button = document.createElement('button');
+    button.id = buttons[i];
+    button.textContent = buttons[i];
+    displayButtons.appendChild(button);
+}
