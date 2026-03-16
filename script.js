@@ -66,8 +66,21 @@ const displayButtons = document.querySelector('.buttons');
 
 for (let i = 0; i < buttonsArray.length; i++) {
     const button = document.createElement('button');
-    button.classList.add('buttons')
+    button.classList.add('button')
     button.id = buttonsArray[i];
     button.textContent = buttonsArray[i];
     displayButtons.appendChild(button);
 }
+
+/*Create the functions that update one of your number variables when the calculator’s 
+digit buttons are clicked. Your calculator’s display should also update to reflect 
+the value of that number variable.*/
+
+const buttons = document.querySelectorAll('.button');
+ buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+    num1 = e.target.textContent
+    });
+});
+
+console.log(num1)
