@@ -22,3 +22,10 @@ function divide(a, b) {
     if (b === 0) { return 'cannot divide by zero'}
     return a / b;
 }
+
+/*A calculator operation will consist of a number, an operator, and another number. 
+For example, 3 + 5. Create three variables, one for each part of the operation. 
+You’ll use these variables to update your display later.*/
+let num1;
+let operator;
+let num2;
