@@ -27,7 +27,7 @@ function divide(a, b) {
 For example, 3 + 5. Create three variables, one for each part of the operation. 
 You’ll use these variables to update your display later.*/
 let num1;
-let operator;
+let operator; 
 let num2;
 
 /* Create a new function operate that takes an operator and two numbers 
@@ -74,17 +74,20 @@ for (let i = 0; i < buttonsArray.length; i++) {
 digit buttons are clicked. Your calculator’s display should also update to reflect 
 the value of that number variable.*/
 
-const buttons = document.querySelectorAll('.button');
- buttons.forEach(button => {
-    button.addEventListener('click', (e) => {
-    num1 = e.target.textContent;
-    console.log(num1);
-    });
-});
+function inputNumber(button) {
+    num1 = button;
+    return num1;
+}
 
-const displayNumbers = document.querySelector('.display');
+const displayDiv = document.querySelector('.display');
 const showNumbers = document.createElement('p');
 showNumbers.id = 'showNumbers';
 showNumbers.textContent = "Hello World";
-displayNumbers.appendChild(showNumbers);
+displayDiv.appendChild(showNumbers);
 
+const buttons = document.querySelectorAll('.button');
+ buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+    showNumbers.textContent = e.target.textContent;
+    });
+});
