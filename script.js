@@ -54,8 +54,6 @@ function operate(num1, operator, num2){
     return result;
 }
 
-console.log(operate(10, 'add', 5));
-
 /*Create a basic HTML calculator with buttons for each digit and operator (including =).
 Don’t worry about making them functional just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
@@ -79,8 +77,14 @@ the value of that number variable.*/
 const buttons = document.querySelectorAll('.button');
  buttons.forEach(button => {
     button.addEventListener('click', (e) => {
-    num1 = e.target.textContent
+    num1 = e.target.textContent;
+    console.log(num1);
     });
 });
 
-console.log(num1)
+const displayNumbers = document.querySelector('.display');
+const showNumbers = document.createElement('p');
+showNumbers.id = 'showNumbers';
+showNumbers.textContent = "Hello World";
+displayNumbers.appendChild(showNumbers);
+
