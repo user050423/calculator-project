@@ -58,7 +58,11 @@ function operate(num1, operator, num2){
 Don’t worry about making them functional just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
 Add a “clear” button.*/
-const buttonsArray = ['AC', 'DEL', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '.', '0', '='];
+const buttonsArray = ['AC', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', '.', 0, '='];
+const operators = ['+', '-', '*', '/', '='];
+const numbers = buttonsArray.filter(button => Number.isFinite(button));
+console.log(numbers)
+
 
 const displayButtons = document.querySelector('.buttons');
 
@@ -74,11 +78,6 @@ for (let i = 0; i < buttonsArray.length; i++) {
 digit buttons are clicked. Your calculator’s display should also update to reflect 
 the value of that number variable.*/
 
-function inputNumber(button) {
-    num1 = button;
-    return num1;
-}
-
 const displayDiv = document.querySelector('.display');
 const showNumbers = document.createElement('p');
 showNumbers.id = 'showNumbers';
@@ -88,6 +87,6 @@ displayDiv.appendChild(showNumbers);
 const buttons = document.querySelectorAll('.button');
  buttons.forEach(button => {
     button.addEventListener('click', (e) => {
-    showNumbers.textContent = e.target.textContent;
+    num1 = e.target.textContent;
     });
 });
