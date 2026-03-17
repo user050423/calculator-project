@@ -59,18 +59,25 @@ Don’t worry about making them functional just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
 Add a “clear” button.*/
 const buttonsArray = ['AC', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', '.', 0, '='];
-const operators = ['+', '-', '*', '/', '='];
-const numbers = buttonsArray.filter(button => Number.isFinite(button));
-console.log(numbers)
+const operators = ['+', '-', '*', '/', '%', '='];
+const digits = buttonsArray.filter(button => Number.isFinite(button));
 
 
 const displayButtons = document.querySelector('.buttons');
 
 for (let i = 0; i < buttonsArray.length; i++) {
     const button = document.createElement('button');
-    button.classList.add('button')
     button.id = buttonsArray[i];
     button.textContent = buttonsArray[i];
+
+    if (digits.includes(buttonsArray[i])) {
+        button.classList.add('button', 'digits');
+    } else if (operators.includes(buttonsArray[i])){
+        button.classList.add('button', 'operators')
+    } else {
+        button.classList.add('button')
+    }
+    
     displayButtons.appendChild(button);
 }
 
