@@ -91,9 +91,15 @@ showNumbers.id = 'showNumbers';
 showNumbers.textContent = "Hello World";
 displayDiv.appendChild(showNumbers);
 
-const buttons = document.querySelectorAll('.button');
- buttons.forEach(button => {
+const operatorButtons = document.querySelectorAll('.operators');
+ operatorButtons.forEach(button => {
     button.addEventListener('click', (e) => {
     num1 = e.target.textContent;
+    console.log(num1)
     });
 });
+
+//create a while looop inside a function that checks if the button being pressed 
+//has a class of digits, store element with class digits in a variable
+
+//create seperate eventlistener for digits and operators and del and ac 
