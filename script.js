@@ -61,7 +61,7 @@ Don’t worry about making them functional just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
 Add a “clear” button.*/
 const buttonsArray = ['AC', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', '.', 0, '='];
-const operators = ['+', '-', '*', '/', '%', '='];
+const operators = ['+', '-', '*', '/', '%'];
 const digits = buttonsArray.filter(button => Number.isFinite(button));
 
 
@@ -112,6 +112,12 @@ digitButtons.forEach(button => {
             console.log(num2);
         }
     })
+})
+
+const operateButton = document.getElementById('=');
+operateButton.addEventListener('click', () => {
+    const result = operate(num1, operator, num2);
+    console.log(result);
 })
 
 //create a while looop inside a function that checks if the button being pressed 
