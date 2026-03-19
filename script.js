@@ -102,12 +102,17 @@ const operatorButtons = document.querySelectorAll('.operators');
 });
 
 const digitButtons = document.querySelectorAll('.digits');
-    digitButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
+digitButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        if (!operator) {
             num1 += e.target.textContent;
             console.log(num1)
-        })
+        } else {
+            num2 += e.target.textContent;
+            console.log(num2);
+        }
     })
+})
 
 //create a while looop inside a function that checks if the button being pressed 
 //has a class of digits, store element with class digits in a variable
