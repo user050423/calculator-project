@@ -34,6 +34,8 @@ let num2 = '';
 and then calls one of the above functions on the numbers.*/
 function operate(num1, operator, num2){
     let result;
+    num1 = Number(num1);
+    num2 = Number(num2);
 
     switch (operator) {
         case '+':
