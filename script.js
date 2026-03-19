@@ -26,9 +26,9 @@ function divide(a, b) {
 /*A calculator operation will consist of a number, an operator, and another number. 
 For example, 3 + 5. Create three variables, one for each part of the operation. 
 You’ll use these variables to update your display later.*/
-let num1;
+let num1 = '';
 let operator; 
-let num2;
+let num2 = '';
 
 /* Create a new function operate that takes an operator and two numbers 
 and then calls one of the above functions on the numbers.*/
@@ -102,7 +102,7 @@ const operatorButtons = document.querySelectorAll('.operators');
 const digitButtons = document.querySelectorAll('.digits');
     digitButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            num1 = e.target.textContent;
+            num1 += e.target.textContent;
             console.log(num1)
         })
     })
