@@ -36,16 +36,16 @@ function operate(num1, operator, num2){
     let result;
 
     switch (operator) {
-        case 'add':
+        case '+':
             result = add(num1, num2);
             break;
-        case 'subtract':
+        case '-':
             result = subtract(num1, num2);
             break;
-        case 'multiply':
+        case '*':
             result = multiply(num1, num2);
             break;
-        case 'divide':
+        case '/':
             result = divide(num1, num2);
             break;
         default:
