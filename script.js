@@ -90,7 +90,7 @@ the value of that number variable.*/
 const displayDiv = document.querySelector('.display');
 const showNumbers = document.createElement('p');
 showNumbers.id = 'showNumbers';
-showNumbers.textContent = "Hello World";
+showNumbers.textContent = "";
 displayDiv.appendChild(showNumbers);
 
 const operatorButtons = document.querySelectorAll('.operators');
@@ -107,8 +107,10 @@ digitButtons.forEach(button => {
         if (!operator) {
             num1 += e.target.textContent;
             console.log(num1)
+            showNumbers.textContent = num1;
         } else {
             num2 += e.target.textContent;
+            showNumbers.textContent = num2;
             console.log(num2);
         }
     })
@@ -117,6 +119,7 @@ digitButtons.forEach(button => {
 const operateButton = document.getElementById('=');
 operateButton.addEventListener('click', () => {
     const result = operate(num1, operator, num2);
+    showNumbers.textContent = result;
     console.log(result);
 })
 
