@@ -118,6 +118,9 @@ digitButtons.forEach(button => {
 
 const operateButton = document.getElementById('=');
 operateButton.addEventListener('click', () => {
+    if (!num1 || !operator || !num2) {
+        return;
+    }
     const result = operate(num1, operator, num2);
     showNumbers.textContent = result;
     console.log(result);
