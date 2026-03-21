@@ -60,7 +60,7 @@ function operate(num1, operator, num2){
 Don’t worry about making them functional just yet.
 There should also be a display for the calculator. Go ahead and fill it with some dummy numbers so it looks correct.
 Add a “clear” button.*/
-const buttonsArray = ['AC', 'DEL', '%', '/', 7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', '.', 0, '='];
+const buttonsArray = ['AC', 'DEL', '/', 7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', '.', 0, '='];
 const operators = ['+', '-', '*', '/', '%'];
 const digits = buttonsArray.filter(button => Number.isFinite(button));
 
@@ -146,4 +146,10 @@ deleteDigit.addEventListener('click', () => {
         }
         showNumbers.textContent = num1;
     }
+})
+
+const decimalButton = document.getElementById('.');
+decimalButton.addEventListener('click', (e) => {
+    decimalPoint = e.target.textContent;
+    showNumbers.textContent += decimalPoint;
 })
