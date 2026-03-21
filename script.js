@@ -123,7 +123,11 @@ operateButton.addEventListener('click', () => {
     console.log(result);
 })
 
-//create a while looop inside a function that checks if the button being pressed 
-//has a class of digits, store element with class digits in a variable
-
 //create seperate eventlistener for digits and operators and del and ac 
+const allClear = document.getElementById('AC');
+allClear.addEventListener('click', () => {
+    num1 = '';
+    operator = '';
+    num2 = '';
+    showNumbers.textContent = '';
+});
