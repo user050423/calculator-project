@@ -131,3 +131,19 @@ allClear.addEventListener('click', () => {
     num2 = '';
     showNumbers.textContent = '';
 });
+
+const deleteDigit = document.getElementById('DEL');
+deleteDigit.addEventListener('click', () => {
+    if (!operator) {
+        num1 = num1.slice(0, -1);
+        console.log(num1)
+        showNumbers.textContent = num1;
+    } else if (operator) {
+        num2 = num2.slice(0, -1);
+        if (num2.length > 0) {
+            console.log(num2);
+            showNumbers.textContent = num2;
+        }
+        showNumbers.textContent = num1;
+    }
+})
