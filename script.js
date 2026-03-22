@@ -124,6 +124,9 @@ operateButton.addEventListener('click', () => {
     const result = operate(num1, operator, num2);
     showNumbers.textContent = result;
     console.log(result);
+    num1 = result;
+    num2 = '';
+    operator = '';
 })
 
 //create seperate eventlistener for digits and operators and del and ac 
