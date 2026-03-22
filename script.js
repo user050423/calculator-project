@@ -146,11 +146,10 @@ deleteDigit.addEventListener('click', () => {
         showNumbers.textContent = num1;
     } else if (operator) {
         num2 = num2.slice(0, -1);
-        if (num2.length > 0) {
-            console.log(num2);
-            showNumbers.textContent = num2;
+        showNumbers.textContent = num2;
+        if (num2.length < 0) {
+            showNumbers.textContent = 0;
         }
-        showNumbers.textContent = num1;
     }
 })
 
