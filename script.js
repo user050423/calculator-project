@@ -117,6 +117,7 @@ digitButtons.forEach(button => {
 })
 
 const operateButton = document.getElementById('=');
+operateButton.classList.add('operate')
 operateButton.addEventListener('click', () => {
     if (!num1 || !operator || !num2) {
         return;
