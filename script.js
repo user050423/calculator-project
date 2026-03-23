@@ -76,6 +76,8 @@ for (let i = 0; i < buttonsArray.length; i++) {
         button.classList.add('button', 'digits');
     } else if (operators.includes(buttonsArray[i])){
         button.classList.add('button', 'operators')
+    } else if (buttonsArray[i] === '=' || buttonsArray[i] === 'AC'){
+        button.classList.add('button', 'pinkButton')
     } else {
         button.classList.add('button')
     }
