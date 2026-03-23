@@ -4,6 +4,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #dfe0e5;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .container {
@@ -33,7 +34,6 @@ body {
 #showNumbers {
     font-size: 30px;
     padding-right: 8px;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
 
@@ -55,8 +55,8 @@ body {
     height: 55px;
     font-size: 19px;
     box-shadow: inset 1.5px 2.5px 4.5px -3.5px #dddddd;
-    font-family: Impact, 'Arial Narrow Bold', sans-serif;
     font-weight: 500;    
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .pinkButton {
