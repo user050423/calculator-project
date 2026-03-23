@@ -159,13 +159,15 @@ deleteDigit.addEventListener('click', () => {
 const decimalButton = document.getElementById('.');
 decimalButton.addEventListener('click', (e) => {
     decimalPoint = e.target.textContent;
-    if (!operator) {
+    if (!operator && !num1.includes('.')) {
         num1 += decimalPoint;
         console.log(num1)
         showNumbers.textContent = num1;
-    } else {
+    } else if (!num2.includes('.')){
         num2 += decimalPoint;
         showNumbers.textContent = num2;
         console.log(num2);
+    } else {
+        return;
     }
 })
