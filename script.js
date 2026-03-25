@@ -100,6 +100,15 @@ const operatorButtons = document.querySelectorAll('.operators');
     button.addEventListener('click', (e) => {
     operator = e.target.textContent;
     console.log(operator)
+    if (num2) { 
+        const result = operate(num1, operator, num2);
+        showNumbers.textContent = result;
+        console.log(result);
+        num1 = result;
+        num2 = '';
+        operator = e.target.textContent;
+    
+    }
     });
 });
 
