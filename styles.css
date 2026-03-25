@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('assets/fonts/sourcecodepro-bold-webfont.woff2') format('woff2'),
+         url('assets/fonts/sourcecodepro-bold-webfont.woff') format('woff');
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -32,6 +38,7 @@ body {
 }
 
 #showNumbers {
+    font-family: 'SourceCodePro';
     font-size: 30px;
     padding-right: 8px;
     font-weight: 600;
