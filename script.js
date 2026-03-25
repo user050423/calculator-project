@@ -101,7 +101,7 @@ const operatorButtons = document.querySelectorAll('.operators');
     operator = e.target.textContent;
     console.log(operator)
     if (num2) { 
-        const result = operate(num1, operator, num2);
+        const result = Number(operate(num1, operator, num2)).toFixed(2);
         showNumbers.textContent = result;
         console.log(result);
         num1 = result;
@@ -116,10 +116,16 @@ const digitButtons = document.querySelectorAll('.digits');
 digitButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         if (!operator) {
+            if (num1.length > 15) {
+                return;
+            }
             num1 += e.target.textContent;
             console.log(num1)
             showNumbers.textContent = num1;
         } else {
+            if (num2.length > 15) {
+                return;
+            }
             num2 += e.target.textContent;
             showNumbers.textContent = num2;
             console.log(num2);
@@ -133,7 +139,7 @@ operateButton.addEventListener('click', () => {
     if (!num1 || !operator || !num2) {
         return;
     }
-    const result = operate(num1, operator, num2);
+    const result = Number(operate(num1, operator, num2)).toFixed(2);
     showNumbers.textContent = result;
     console.log(result);
     num1 = result;
