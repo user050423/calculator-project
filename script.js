@@ -98,8 +98,6 @@ displayDiv.appendChild(showNumbers);
 const operatorButtons = document.querySelectorAll('.operators');
  operatorButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-    operator = e.target.textContent;
-    console.log(operator)
     if (num2) { 
         const result = Number(operate(num1, operator, num2)).toFixed(2);
         showNumbers.textContent = result;
@@ -107,8 +105,12 @@ const operatorButtons = document.querySelectorAll('.operators');
         num1 = result;
         num2 = '';
         operator = e.target.textContent;
-    
+        console.log(operator)
+    } else {
+        operator = e.target.textContent;
+        console.log(operator)
     }
+
     });
 });
 
