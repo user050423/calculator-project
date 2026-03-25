@@ -99,7 +99,8 @@ const operatorButtons = document.querySelectorAll('.operators');
  operatorButtons.forEach(button => {
     button.addEventListener('click', (e) => {
     if (num2) { 
-        const result = Number(operate(num1, operator, num2)).toFixed(2);
+        let result = operate(num1, operator, num2);
+        result = Number.isInteger(result) ? result: Number(result).toFixed(2);
         showNumbers.textContent = result;
         console.log(result);
         num1 = result;
@@ -141,7 +142,8 @@ operateButton.addEventListener('click', () => {
     if (!num1 || !operator || !num2) {
         return;
     }
-    const result = Number(operate(num1, operator, num2)).toFixed(2);
+    let result = operate(num1, operator, num2);
+    result = Number.isInteger(result) ? result: Number(result).toFixed(2);
     showNumbers.textContent = result;
     console.log(result);
     num1 = result;
