@@ -34,8 +34,8 @@ let num2 = '';
 and then calls one of the above functions on the numbers.*/
 function operate(num1, operator, num2){
     let result;
-    num1 = Number(num1);
-    num2 = Number(num2);
+    num1 = num1 === '.' ? 0 : Number(num1);
+    num2 = num2 === '.' ? 0 : Number(num2);
 
     switch (operator) {
         case '+':
@@ -53,8 +53,18 @@ function operate(num1, operator, num2){
         default:
             result = "error";
     }
-    return result;
+    if (Number.isInteger(result)) {
+        if (result > 15) {
+            return result.toExponential()
+        }
+        return result;
+    } else if (typeof result === 'string') {
+        return result;
+    } else {
+        return Number(result).toFixed(2);
+    }
 }
+
 
 /*Create a basic HTML calculator with buttons for each digit and operator (including =).
 Don’t worry about making them functional just yet.
@@ -98,19 +108,18 @@ displayDiv.appendChild(showNumbers);
 const operatorButtons = document.querySelectorAll('.operators');
  operatorButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-    if (num2) { 
-        let result = operate(num1, operator, num2);
-        result = Number.isInteger(result) ? result: Number(result).toFixed(2);
-        showNumbers.textContent = result;
-        console.log(result);
-        num1 = result;
-        num2 = '';
-        operator = e.target.textContent;
-        console.log(operator)
-    } else {
-        operator = e.target.textContent;
-        console.log(operator)
-    }
+        if (num2) { 
+            let result = operate(num1, operator, num2);
+            showNumbers.textContent = result;
+            console.log(result);
+            num1 = result;
+            num2 = '';
+            operator = e.target.textContent;
+            console.log(operator);
+        } else {
+            operator = e.target.textContent;
+            console.log(operator)
+        }
 
     });
 });
@@ -139,11 +148,10 @@ digitButtons.forEach(button => {
 const operateButton = document.getElementById('=');
 operateButton.classList.add('operate')
 operateButton.addEventListener('click', () => {
-    if (!num1 || !operator || !num2) {
+    if (!num1 || !operator || !num2)  {
         return;
     }
     let result = operate(num1, operator, num2);
-    result = Number.isInteger(result) ? result: Number(result).toFixed(2);
     showNumbers.textContent = result;
     console.log(result);
     num1 = result;
