@@ -54,7 +54,7 @@ function operate(num1, operator, num2){
             result = "error";
     }
     if (Number.isInteger(result)) {
-        if (result > 15) {
+        if (result.length > 15) {
             return result.toExponential()
         }
         return result;
